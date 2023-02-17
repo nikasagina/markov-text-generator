@@ -7,6 +7,8 @@
 
 using namespace std;
 
+#define GENERATED_TEXT_LENGTH 2000
+
 void openFile(ifstream& infile);
 unordered_map<string, vector<char> > readStats(ifstream& infile, int k);
 string generateText(unordered_map<string, vector<char> > statistics);
@@ -99,7 +101,7 @@ string generateText(unordered_map<string, vector<char> > statistics){
 
 
 	string lastSequence = largestSequence;
-	while(text.length() < 2000 ){
+	while(text.length() < GENERATED_TEXT_LENGTH ){
 		// if no chars to chose from (the end of the file), stop
 		if(statistics[lastSequence].size() == 0) break;
 
